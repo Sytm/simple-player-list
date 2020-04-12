@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.md5lukas</groupId>
-    <artifactId>simple-playerlist</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>simple-player-list</artifactId>
+    <version>1.0.0</version>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>

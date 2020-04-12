@@ -3,12 +3,13 @@ refreshRate: 5
 
 messages:
   playerList:
+    # To view available placeholders look here: https://github.com/Sytm/simple-player-list/wiki/Available-Placeholders
     header: |
       This is going to appear above the player list
-      %onlineplayers% / %maxonlineplayers%
+      %onlineplayers% / %maxplayers%
     footer: |
       This is going to appear below the player list
-  command:
+  commands:
     notFound: '&9&lSPL &e&l>&r &cThis command could not be found'
     noPermission: '&9&lSPL &e&l>&r &cYou do not have the permission to perform this action'
     help:
@@ -16,5 +17,5 @@ messages:
         &9&lSPL &e&l>&r &7This is the &eSimpleLanguagePlugin.
         &7Below you will see a list of commands available for you:
       reload: '&e /simpleplayerlist reload &7- Reload the configuration from disk'
-    relaod:
+    reload:
       success: '&9&lSPL &e&l>&r &7The configuration has been reloaded successfully'

@@ -19,11 +19,11 @@ public class SPLMessages {
         char altColorChar = '&';
         playerListHeader = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("playerList.header"));
         playerListFooter = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("playerList.footer"));
-        notFound = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("notFound"));
-        noPermission = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("noPermission"));
-        helpTitle = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("help.title"));
-        helpReload = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("help.reload"));
-        reloadSuccess = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("reload.success"));
+        notFound = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.notFound"));
+        noPermission = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.noPermission"));
+        helpTitle = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.help.title"));
+        helpReload = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.help.reload"));
+        reloadSuccess = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.reload.success"));
     }
 
     public String getPlayerListHeader() {

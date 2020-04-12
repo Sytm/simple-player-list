@@ -3,6 +3,7 @@ package de.md5lukas.spl;
 import de.md5lukas.spl.config.SPLConfig;
 import org.bukkit.plugin.java.JavaPlugin;
 
+@SuppressWarnings("ConstantConditions")
 public class SimplePlayerList extends JavaPlugin {
 
     private SPLConfig splConfig;
@@ -13,6 +14,7 @@ public class SimplePlayerList extends JavaPlugin {
         saveDefaultConfig();
         splConfig = new SPLConfig(getConfig());
         playerListUpdater = new PlayerListUpdater(this);
+        getCommand("simpleplayerlist").setExecutor(new SPLCommand(this));
     }
 
     public void reloadSPLConfig() {

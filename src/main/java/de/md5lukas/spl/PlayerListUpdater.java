@@ -25,15 +25,14 @@ public class PlayerListUpdater {
 
     private String fillPlaceholders(Player player, String string) {
         string = string.replace("%onlineplayers%", Integer.toString(Bukkit.getOnlinePlayers().size()));
-        string = string.replace("%maxonlineplayers%", Integer.toString(Bukkit.getMaxPlayers()));
+        string = string.replace("%maxplayers%", Integer.toString(Bukkit.getMaxPlayers()));
         return string;
     }
 
     public void restartTimer() {
         if (currentTask != null)
             currentTask.cancel();
-        currentTask = main.getServer().getScheduler().runTaskTimer(main, () -> {
-            Bukkit.getOnlinePlayers().forEach(this::updatePlayer);
-        }, 0, main.getSPLConfig().getRefreshRateInTicks());
+        currentTask = main.getServer().getScheduler()
+                .runTaskTimer(main, () -> Bukkit.getOnlinePlayers().forEach(this::updatePlayer), 0, main.getSPLConfig().getRefreshRateInTicks());
     }
 }
