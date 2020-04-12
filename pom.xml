@@ -6,7 +6,7 @@
 
     <groupId>de.md5lukas</groupId>
     <artifactId>simple-player-list</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -30,6 +30,10 @@
             <id>sytm-sonatype</id>
             <url>https://repo.sytm.de/repository/maven-sonatype/</url>
         </repository>
+        <repository>
+            <id>sytm-codemc</id>
+            <url>https://repo.sytm.de/repository/maven-codemc/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -38,6 +42,12 @@
             <artifactId>spigot-api</artifactId>
             <version>${spigot.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-bukkit-lite</artifactId>
+            <version>1.7</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -78,6 +88,36 @@
                             <Source-Url>${project.url}</Source-Url>
                         </manifestEntries>
                     </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.2</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <filters>
+                        <filter>
+                            <artifact>org.bstats:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/**</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                    <relocations>
+                        <relocation>
+                            <pattern>org.bstats.bukkit</pattern>
+                            <shadedPattern>de.md5lukas.spl</shadedPattern>
+                        </relocation>
+                    </relocations>
                 </configuration>
             </plugin>
         </plugins>
