@@ -1,0 +1,20 @@
+# The refresh rate in seconds on how often the header + footer should be updated
+refreshRate: 5
+
+messages:
+  playerList:
+    header: |
+      This is going to appear above the player list
+      %onlineplayers% / %maxonlineplayers%
+    footer: |
+      This is going to appear below the player list
+  command:
+    notFound: '&9&lSPL &e&l>&r &cThis command could not be found'
+    noPermission: '&9&lSPL &e&l>&r &cYou do not have the permission to perform this action'
+    help:
+      title: |
+        &9&lSPL &e&l>&r &7This is the &eSimpleLanguagePlugin.
+        &7Below you will see a list of commands available for you:
+      reload: '&e /simpleplayerlist reload &7- Reload the configuration from disk'
+    relaod:
+      success: '&9&lSPL &e&l>&r &7The configuration has been reloaded successfully'

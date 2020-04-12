@@ -1,0 +1,24 @@
+name: Simple-Playerlist
+version: ${version}
+main: de.md5lukas.spl.SimplePlayerList
+author: Md5Lukas (Sytm)
+api-version: 1.13
+
+commands:
+  simpleplayerlist:
+    aliases:
+      - spl
+    description: Main command of this plugin
+
+permissions:
+  simpleplayerlist.*:
+    children:
+      - simpleplayerlist.command
+      - simpleplayerlist.reload
+    description: Grants a player access to all commands of this plugin
+    default: op
+  simpleplayerlist.command:
+    description: This permission is required to access the help command at all
+    default: true
+  simpleplayerlist.reload:
+    description: With this permission a player can reload the configuration
