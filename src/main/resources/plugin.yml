@@ -6,6 +6,7 @@ api-version: 1.13
 
 commands:
   simpleplayerlist:
+    permission: simpleplayerlist.command
     aliases:
       - spl
     description: Main command of this plugin
@@ -19,6 +20,5 @@ permissions:
     default: op
   simpleplayerlist.command:
     description: This permission is required to access the help command at all
-    default: true
   simpleplayerlist.reload:
     description: With this permission a player can reload the configuration

@@ -10,6 +10,8 @@ messages:
     footer: |
       This is going to appear below the player list
   commands:
+    # If you want to be sneaky you can do this to make it "hidden" or change it to the same as notFound
+    mainCommandNoPermission: 'Unknown command. Type "/help" for help.'
     notFound: '&9&lSPL &e&l>&r &cThis command could not be found'
     noPermission: '&9&lSPL &e&l>&r &cYou do not have the permission to perform this action'
     help:

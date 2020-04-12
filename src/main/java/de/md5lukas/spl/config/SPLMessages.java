@@ -9,6 +9,7 @@ public class SPLMessages {
     private String
             playerListHeader,
             playerListFooter,
+            mainCommandNoPermission,
             notFound,
             noPermission,
             helpTitle,
@@ -19,6 +20,7 @@ public class SPLMessages {
         char altColorChar = '&';
         playerListHeader = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("playerList.header"));
         playerListFooter = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("playerList.footer"));
+        mainCommandNoPermission = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.mainCommandNoPermission"));
         notFound = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.notFound"));
         noPermission = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.noPermission"));
         helpTitle = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.help.title"));
@@ -32,6 +34,10 @@ public class SPLMessages {
 
     public String getPlayerListFooter() {
         return playerListFooter;
+    }
+
+    public String getMainCommandNoPermission() {
+        return mainCommandNoPermission;
     }
 
     public String getNotFound() {
