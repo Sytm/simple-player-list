@@ -1,5 +1,6 @@
 package de.md5lukas.spl.config;
 
+import de.md5lukas.spl.ColorTranslator;
 import org.bukkit.configuration.file.FileConfiguration;
 
 @SuppressWarnings("ConstantConditions")

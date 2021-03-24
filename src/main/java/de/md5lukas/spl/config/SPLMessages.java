@@ -1,10 +1,11 @@
 package de.md5lukas.spl.config;
 
-import net.md_5.bungee.api.ChatColor;
+import de.md5lukas.spl.ColorTranslator;
 import org.bukkit.configuration.ConfigurationSection;
 
-@SuppressWarnings("ConstantConditions")
 public class SPLMessages {
+
+    private final ColorTranslator colorTranslator;
 
     private String
             playerListHeader,
@@ -16,16 +17,19 @@ public class SPLMessages {
             helpReload,
             reloadSuccess;
 
+    public SPLMessages() {
+        this.colorTranslator = new ColorTranslator();
+    }
+
     public void load(ConfigurationSection section) {
-        char altColorChar = '&';
-        playerListHeader = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("playerList.header"));
-        playerListFooter = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("playerList.footer"));
-        mainCommandNoPermission = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.mainCommandNoPermission"));
-        notFound = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.notFound"));
-        noPermission = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.noPermission"));
-        helpTitle = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.help.title"));
-        helpReload = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.help.reload"));
-        reloadSuccess = ChatColor.translateAlternateColorCodes(altColorChar, section.getString("commands.reload.success"));
+        playerListHeader = colorTranslator.translate(section.getString("playerList.header"));
+        playerListFooter = colorTranslator.translate(section.getString("playerList.footer"));
+        mainCommandNoPermission = colorTranslator.translate(section.getString("commands.mainCommandNoPermission"));
+        notFound = colorTranslator.translate(section.getString("commands.notFound"));
+        noPermission = colorTranslator.translate(section.getString("commands.noPermission"));
+        helpTitle = colorTranslator.translate(section.getString("commands.help.title"));
+        helpReload = colorTranslator.translate(section.getString("commands.help.reload"));
+        reloadSuccess = colorTranslator.translate(section.getString("commands.reload.success"));
     }
 
     public String getPlayerListHeader() {
