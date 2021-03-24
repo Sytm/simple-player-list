@@ -16,7 +16,7 @@ messages:
     noPermission: '&9&lSPL &e&l>&r &cYou do not have the permission to perform this action'
     help:
       title: |
-        &9&lSPL &e&l>&r &7This is the &eSimpleLanguagePlugin.
+        &9&lSPL &e&l>&r &7This is the &eSimple-Playerlist Plugin.
         &7Below you will see a list of commands available for you:
       reload: '&e /simpleplayerlist reload &7- Reload the configuration from disk'
     reload:
