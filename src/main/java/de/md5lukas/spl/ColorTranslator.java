@@ -15,7 +15,7 @@ public class ColorTranslator {
         try {
             ChatColor.of("#FFFFFF");
             localRgbSupported = true;
-        } catch (/*NoSuchMethod*/Exception e) {
+        } catch (NoSuchMethodError e) {
             localRgbSupported = false;
         }
         rgbSupported = localRgbSupported;

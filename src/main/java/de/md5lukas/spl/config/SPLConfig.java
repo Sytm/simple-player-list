@@ -1,13 +1,12 @@
 package de.md5lukas.spl.config;
 
-import de.md5lukas.spl.ColorTranslator;
 import org.bukkit.configuration.file.FileConfiguration;
 
 @SuppressWarnings("ConstantConditions")
 public class SPLConfig {
 
     private int refreshRate;
-    private SPLMessages splMessages;
+    private final SPLMessages splMessages;
 
     public SPLConfig(FileConfiguration configuration) {
         splMessages = new SPLMessages();
