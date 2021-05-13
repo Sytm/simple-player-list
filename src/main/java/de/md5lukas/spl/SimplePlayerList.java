@@ -6,7 +6,7 @@ import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @SuppressWarnings("ConstantConditions")
-public class SimplePlayerList extends JavaPlugin {
+public final class SimplePlayerList extends JavaPlugin {
 
     private static final int METRICS_PLUGIN_ID = 7109;
 

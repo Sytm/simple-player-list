@@ -4,7 +4,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class SPLListener implements Listener {
+public final class SPLListener implements Listener {
 
     private final SimplePlayerList main;
 

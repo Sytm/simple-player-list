@@ -3,7 +3,7 @@ package de.md5lukas.spl.config;
 import org.bukkit.configuration.file.FileConfiguration;
 
 @SuppressWarnings("ConstantConditions")
-public class SPLConfig {
+public final class SPLConfig {
 
     private int refreshRate;
     private final SPLMessages splMessages;

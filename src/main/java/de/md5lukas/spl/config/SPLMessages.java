@@ -3,7 +3,7 @@ package de.md5lukas.spl.config;
 import de.md5lukas.spl.ColorTranslator;
 import org.bukkit.configuration.ConfigurationSection;
 
-public class SPLMessages {
+public final class SPLMessages {
 
     private final ColorTranslator colorTranslator;
 

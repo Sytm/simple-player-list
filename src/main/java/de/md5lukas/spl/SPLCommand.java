@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 
-public class SPLCommand implements CommandExecutor {
+public final class SPLCommand implements CommandExecutor {
 
     private final SimplePlayerList main;
     private final SPLMessages messages;
@@ -26,7 +26,7 @@ public class SPLCommand implements CommandExecutor {
             if (args.length == 0) {
                 sendHelp(sender);
             } else {
-                if ("reload".equals(args[0].toLowerCase())) {
+                if ("reload".equalsIgnoreCase(args[0])) {
                     reload(sender);
                 } else {
                     sendNotFound(sender);

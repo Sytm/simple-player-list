@@ -5,7 +5,7 @@ import net.md_5.bungee.api.ChatColor;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ColorTranslator {
+public final class ColorTranslator {
 
     private final Pattern rgbPattern = Pattern.compile("(\\\\?)&(#[0-9a-fA-F]{6})");
     private final boolean rgbSupported;
