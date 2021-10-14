@@ -1,7 +1,7 @@
 package de.md5lukas.spl;
 
 import de.md5lukas.spl.config.SPLConfig;
-import org.bstats.bukkit.MetricsLite;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -23,7 +23,7 @@ public final class SimplePlayerList extends JavaPlugin {
         spl.setExecutor(new SPLCommand(this));
         spl.setPermissionMessage(splConfig.getSPLMessages().getMainCommandNoPermission());
 
-        new MetricsLite(this, METRICS_PLUGIN_ID);
+        new Metrics(this, METRICS_PLUGIN_ID);
     }
 
     public void reloadSPLConfig() {

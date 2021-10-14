@@ -19,20 +19,16 @@
 
     <repositories>
         <repository>
-            <id>sytm-nexus</id>
-            <url>https://repo.sytm.de/repository/maven-hosted/</url>
+            <id>spigot</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>sytm-spigot</id>
-            <url>https://repo.sytm.de/repository/maven-spigot/</url>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>sytm-sonatype</id>
-            <url>https://repo.sytm.de/repository/maven-sonatype/</url>
-        </repository>
-        <repository>
-            <id>sytm-codemc</id>
-            <url>https://repo.sytm.de/repository/maven-codemc/</url>
+            <id>codemc</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
         </repository>
     </repositories>
 
@@ -45,8 +41,8 @@
         </dependency>
         <dependency>
             <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit-lite</artifactId>
-            <version>1.7</version>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>2.2.1</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -114,7 +110,7 @@
                     </filters>
                     <relocations>
                         <relocation>
-                            <pattern>org.bstats.bukkit</pattern>
+                            <pattern>org.bstats</pattern>
                             <shadedPattern>de.md5lukas.spl</shadedPattern>
                         </relocation>
                     </relocations>
