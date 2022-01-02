@@ -1,17 +1,19 @@
-package de.md5lukas.spl;
+package de.md5lukas.spl.placerholder.lite;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
+import org.bukkit.plugin.Plugin;
 
 import java.lang.reflect.Field;
 import java.text.DecimalFormat;
+import java.util.logging.Level;
 
 public final class TPSRetriever {
 
     private Object dedicatedServer = null;
     private Field recentTpsField = null;
 
-    public double[] getTPS() {
+    public TPSRetriever(Plugin plugin) {
         try {
             if (recentTpsField == null) {
                 Server bukkitServer = Bukkit.getServer();
@@ -23,10 +25,16 @@ public final class TPSRetriever {
                 recentTpsField = dedicatedServer.getClass().getSuperclass().getDeclaredField("recentTps");
                 recentTpsField.setAccessible(true);
             }
-
-            return (double[]) recentTpsField.get(dedicatedServer);
         } catch (IllegalAccessException | NoSuchFieldException e) {
-            throw new RuntimeException(e);
+            plugin.getLogger().log(Level.SEVERE, "Could not initialize TPS-Retriever", e);
+        }
+    }
+
+    public double[] getTPS() {
+        try {
+            return (double[]) recentTpsField.get(dedicatedServer);
+        } catch (IllegalAccessException e) {
+            return new double[] { -1, -1, -1 };
         }
     }
 

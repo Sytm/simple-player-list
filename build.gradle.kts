@@ -17,6 +17,9 @@ repositories {
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven("https://oss.sonatype.org/content/repositories/snapshots/")
     maven("https://repo.codemc.io/repository/maven-public/")
+
+    maven("https://jitpack.io")
+    maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
 }
 
 val spigotVersion: String by project
@@ -24,9 +27,13 @@ val spigotVersion: String by project
 dependencies {
     val bstatsVersion: String by project
 
-    implementation("org.spigotmc:spigot-api:$spigotVersion")
+    val placeholderAPIVersion: String by project
 
-    implementation("org.bstats:bstats-bukkit:$bstatsVersion")
+    implementation("org.spigotmc", "spigot-api", spigotVersion)
+
+    implementation("org.bstats", "bstats-bukkit", bstatsVersion)
+
+    implementation("me.clip", "placeholderapi", placeholderAPIVersion)
 }
 
 tasks.withType<ProcessResources> {

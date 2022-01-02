@@ -5,6 +5,10 @@ author: Md5Lukas (Sytm)
 
 api-version: ${apiVersion}
 
+softdepend:
+  - Vault
+  - PlaceholderAPI
+
 commands:
   simpleplayerlist:
     permission: simpleplayerlist.command
