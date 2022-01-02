@@ -2,7 +2,8 @@ name: Simple-Playerlist
 version: ${version}
 main: de.md5lukas.spl.SimplePlayerList
 author: Md5Lukas (Sytm)
-api-version: 1.13
+
+api-version: ${apiVersion}
 
 commands:
   simpleplayerlist:
