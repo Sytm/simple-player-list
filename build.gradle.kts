@@ -6,11 +6,6 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.1.0"
 }
 
-group = "de.md5lukas"
-version = "1.3.1"
-description = "simple-player-list"
-
-
 repositories {
     mavenCentral()
 
