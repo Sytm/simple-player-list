@@ -26,14 +26,19 @@ public final class PlaceholderFillerLite implements PlaceholderFiller {
         string = string.replace("%name%", player.getName());
         string = string.replace("%displayname%", player.getDisplayName());
 
+        string = string.replace("%ping%", Integer.toString(pingRetriever.getPing(player)));
+
+        string = string.replace("%world%", player.getWorld().getName());
+        string = string.replace("%x%", Integer.toString(player.getLocation().getBlockX()));
+        string = string.replace("%y%", Integer.toString(player.getLocation().getBlockY()));
+        string = string.replace("%z%", Integer.toString(player.getLocation().getBlockZ()));
+
         string = string.replace("%onlineplayers%", Integer.toString(Bukkit.getOnlinePlayers().size()));
         string = string.replace("%maxplayers%", Integer.toString(Bukkit.getMaxPlayers()));
 
         string = string.replace("%tps1%", currentTps[0]);
         string = string.replace("%tps5%", currentTps[1]);
         string = string.replace("%tps15%", currentTps[2]);
-
-        string = string.replace("%ping%", Integer.toString(pingRetriever.getPing(player)));
 
         return string;
     }
