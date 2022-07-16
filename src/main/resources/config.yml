@@ -1,6 +1,9 @@
 # The refresh rate in seconds on how often the header + footer should be updated
 refreshRate: 5
 
+# Set this to false if you just want to use the basic integrated placeholders (https://github.com/Sytm/simple-player-list/wiki/Available-Placeholders)
+usePlaceholderAPI: true
+
 messages:
   playerList:
     # To view available placeholders look here: https://github.com/Sytm/simple-player-list/wiki/Available-Placeholders

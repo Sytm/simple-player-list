@@ -17,17 +17,16 @@ public final class SimplePlayerList extends JavaPlugin {
     private SPLConfig splConfig;
     private PlayerListUpdater playerListUpdater;
 
-    private PlaceholderFiller placeholderFiller;
+    private PlaceholderFiller placeholderAPIFiller;
+    private PlaceholderFiller liteFiller;
 
     @Override
     public void onEnable() {
         saveDefaultConfig();
         splConfig = new SPLConfig(getConfig());
 
-        placeholderFiller = PlaceholderAPIHook.getInstance(this);
-        if (placeholderFiller == null) {
-            placeholderFiller = new PlaceholderFillerLite(this);
-        }
+        placeholderAPIFiller = PlaceholderAPIHook.getInstance(this);
+        liteFiller = new PlaceholderFillerLite(this);
 
         playerListUpdater = new PlayerListUpdater(this);
 
@@ -41,7 +40,7 @@ public final class SimplePlayerList extends JavaPlugin {
     private void initMetrics() {
         Metrics metrics = new Metrics(this, METRICS_PLUGIN_ID);
         metrics.addCustomChart(new SimplePie("placeholderapi", () -> {
-            if (placeholderFiller instanceof PlaceholderAPIHook) {
+            if (placeholderAPIFiller != null && splConfig.isUsePlaceholderAPI()) {
                 return "true";
             } else {
                 return "false";
@@ -61,7 +60,11 @@ public final class SimplePlayerList extends JavaPlugin {
     }
 
     public PlaceholderFiller getPlaceholderFiller() {
-        return placeholderFiller;
+        if (placeholderAPIFiller != null && splConfig.isUsePlaceholderAPI()) {
+            return placeholderAPIFiller;
+        } else {
+            return liteFiller;
+        }
     }
 
     public PlayerListUpdater getPlayerListUpdater() {
